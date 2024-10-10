@@ -8,11 +8,13 @@ const app = express()
 const port = process.env.PORT || 5000
 
 const publicDirPath = path.join(__dirname, './public')
-
+//set view engine ejs
 app.set('view engine', 'ejs')
 app.use(express.static(publicDirPath))
 
 app.use(bodyParser.urlencoded({ extended: false }))
+//form jo data aarha h usko pahele object me convert kr rha h 
+//req.body ke andar mere value ko laa ke deta h
 
 app.use(bodyParser.json())
 
